@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Niklas Nauber Portfolio</title>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <link rel="stylesheet" href="./vuePortfolio.css">
+</head>
+<body>
+
+<div id="mainElement">
+    <img src="media/niklasnauber.jpg"" alt="">
+<ul class="projects-ul">
+    <li class='project-li' v-for="project in projects">
+
+        <img class='project-img' :src="project.imgSrc" :alt="project.imgSrc">
+
+        <div class="projectInfo">
+            {{project.someName}} <br>
+            {{project.description}}
+        </div>
+
+
+    </li>
+
+</ul>
+</div>
+
+</body>
+
+<script>
+
+    var main = new Vue ({
+        el: '#mainElement',
+        data: {
+            projects: [
+                {
+                    imgSrc: 'media/niklasnauber.jpg',
+                    someName: "some Name",
+                    description: "some description"
+
+                },
+                {
+                    imgSrc: "media/spectralogo small.png",
+                    someName: "some Name",
+                    description: "some description"
+
+                }
+
+
+
+
+            ]
+
+        }
+
+
+    })
+
+
+
+</script>
+</html>
