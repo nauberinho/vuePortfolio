@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "choreographer-js": "^1.1.0"
+  },
+  "name": "vueportfolio",
+  "version": "1.0.0",
+  "description": "vueportfolio",
+  "main": "vuePortfolio.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
