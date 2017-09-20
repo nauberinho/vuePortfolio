@@ -1,64 +1,96 @@
 
 body {
     font-family: 'Athiti', sans-serif;
-    background-color: #d6d6d6;
+    background-color: #41423c;
     overflow-y: auto;
 }
 
-.main-div{
 
-    width: 1400px;
-    height: 400vh;
-    margin: auto;
-    overflo-x: hidden;
+@media (min-width: 900px) {
+    .main-div{
+        width: 90%;
+        margin: auto;
+        overflow-y: hidden;
+        position: relative;
+        top: 12%;
+    }
+}
 
-    position: relative;
+@media (max-width: 899px) {
+    .main-div{
+        width: 100%;
+        margin: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+
+
+        position: relative;
+        top: 5%;
+    }
 
 
 }
 
 .intro-div{
-
-    height: 15vh;
     text-align: center;
-    border: 3px solid grey;
+    align-content: center;
     position: fixed;
     z-index: 15;
     width: 100%;
+    height: 7%;
     left: 0;
     top:0;
-    background-color: #d6d6d6;
-    align-content: center;
+    background-color: white;
+    transition: 0.3s ease;
+    overflow: hidden;
+    color: #41423c;
+    font-size: 1.4em;
+    font-weight: 50;
+    padding-top: 0.9%;
+
 }
 
-#letters {
+.intro-video{
+    position: relative;
+    bottom: 0%;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.intro-cover-div{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 150000;
+    top:0;
+    left:0;
+    color: #41423c;
+}
+
+#letters{
     position: relative;
     margin: auto;
-    width: 15%;
+    width: 100%;
     height: 100%;
     text-align: center;
     display: flex;
     flex-direction: row;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 700;
     align-content: center;
+    color: #41423c;
 }
 
-.ul-container{
-    width: 90%;
-    background-color: #f7f7f7;
-    height: 100vh;
-    margin: auto;
-    overflow-x: hidden;
-    position: absolute;
-    border: 2px solid lightgrey;
-    bottom: 0vh;
-}
 
 .projects-ul{
+    position: relative;
+    left: -1%;
+    top: 9%;
+    min-height: 100%;
     list-style-type: none;
-    background-color: #f7f7f7;
-    width: 90%;
+    background-color: white;
+    width: 92%;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -66,27 +98,149 @@ body {
     flex-wrap: wrap;
 }
 
-.project-li{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    height: 30vh;
-    width: 30%;
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    background-color:
+@media (max-width: 899px) {
+    .projects-ul{
+        width: 100%;
+        top: 13%;
+        min-height: 100%;
+
+        margin: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: relative;
+    }
 
 
 }
 
+@media (min-width: 900px) {
+    .projects-ul{
+        width: 95%;
+        min-height: 100%;
+        top: 9%;
+        margin: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+
+}
+
+.project-li{
+    display: flex;
+    cursor: pointer;
+    border: none;
+    flex-direction: column;
+    position: relative;
+    height: 50vh;
+    width: 31%;
+    margin: auto;
+    margin-left: -1%;
+    margin-top: 2%;
+    overflow: hidden;
+    color: #232621;
+    transition: 0.3s ease;
+    background-color: #e2e2e2;
+    border-bottom: 1px solid white;
+
+}
+
+@media (max-width: 899px) {
+    .project-li{
+        width: 40%;
+        height: 60%;
+        margin: 1%;
+        margin-left: -1%;
+        margin-right: auto;
+        margin-top: 2%;
+
+
+    }
+}
+
+@media (max-width: 599px) {
+    .project-li{
+        width: 90%;
+        height: 80%;
+        margin-left: -5.5%;
+        margin-right: auto;
+        margin-top: 2%;
+
+    }
+}
+
+
+.project-li:hover{
+
+
+
+
+
+
+ }
+
 .project-img{
-    max-height: 100%;
-    max-width: 70%;
-    border: 1px solid blue;
+    max-height: 80%;
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
+    transition: 0.3s ease;-webkit-box-shadow: 0 10px 10px -10px #afafaf;
+    -moz-box-shadow: 0 10px 10px -10px #afafaf;
+    box-shadow: 0 10px 30px -10px #41423c;
 
 
+
+
+
+}
+
+.project-li:hover .go-to-button{
+
+
+background-color: rgba(46, 48, 46,0.685);
+
+
+
+
+}
+
+.project-info{
+
+    height: 13%;
+    font-weight: 700;
+    width: 100%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    transition: 0.3s ease;
+    margin-top: 5%;
+    color: #41423c;
+
+}
+
+.go-to-button{
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid #f7f7f7;
+    background-color: rgba(46, 48, 46,0.985);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-size: 1.2em;
+    padding-top: 4%;
+    transition: 0.3s ease;
+    color: #41423c;
+    color: #efdd51;
+}
+
+.cover-div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer ;
+    z-index: 1;
 }
 
 .project-not-in-focus{
@@ -107,7 +261,7 @@ body {
 
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.90);
+    background-color: rgba(46, 48, 46,0.985);
     z-index: 10;
     transition: 0.15s ease;
     position: fixed;
@@ -119,33 +273,108 @@ body {
 }
 
 .project-in-focus-content{
-    width: 50%;
-    height: 50%;
+
+
+    height: 90%;
     color: #f7f7f7;
     font-size: 1.5em;
     font-weight: 700;
     margin: auto;
+    margin-top: 0%;
     background: -webkit-canvas(squares);
+    -webkit-box-shadow: 0 10px 10px -10px #afafaf;
+    -moz-box-shadow: 0 10px 10px -10px #afafaf;
+    box-shadow: 0 10px 10px -10px #afafaf;
 
 
 }
 
-.project-in-focus-img{
-    max-width: 50%;
-    max-height: 60%;
-    margin: auto;
-    margin-top: 3%;
-
+@media (min-width: 900px) {
+    .project-in-focus-content{
+        width: 75%;
+    }
 }
 
-.product-in-focus-description{
-    border: 1px solid white;
-    height: 30%;
-    width: 100%;
+@media (max-width: 899px) {
+    .project-in-focus-content{
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+.project-in-focus-title{
     position: relative;
-    margin: auto;
-    margin-top: 3%;
+    height: 15%;
+    width: 90%;
+    top: 10%;
+    font-size: 1.2em;
+    font-weight: 100;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    color: #efdd51;
+}
 
+
+
+
+.project-in-focus-description{
+
+    height: 45%;
+    width: 100%;
+    background-color: rgba(46, 48, 46,0.99);
+    padding: 3%;
+
+}
+
+
+.product-in-focus-techs-and-button{
+        height: 30%;
+        width: 90%;
+        position: absolute;
+        margin: auto;
+        margin-top: 70%;
+        display: flex;
+        flex-direction: row;
+        color: #f7f7f7;
+        font-size: 1.2em;
+        bottom: 3%;
+    bottom: 0%;
+
+    }
+
+.product-in-focus-techs{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    left: -10%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: #f7f7f7;
+    font-size: 1.2em;
+    margin-bottom: 3%;
+    background-color: rgba(46, 48, 46,1);
+
+}
+
+
+.product-in-focus-techs ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: relative;
+    margin-left: 0%;
+    background-color: rgba(46, 48, 46,1);
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin-top: -5%;
+    flex-wrap: wrap;
+}
+
+.product-in-focus-techs ul li{
+    margin: 3%;
 
 }
 
@@ -154,14 +383,49 @@ button{
     background: none;
     border: none;
     outline: none;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 700;
+
+}
+
+.see-it-live{
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 700;
+    position: relative;
+    right: 10%;
+    font-size: 3em;
+    top: 32%;
+    height: 30%;
+    width: 45;
+    color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+.see-it-live span{
+    font-size: 0.27em;
+    transition: 0.3s ease;
+}
+
+.see-it-live:hover{
+    color: #efdd51;
+
+}
+
+.see-it-live:hover span{
+    color: #f7f7f7;
 
 }
 
 .go-back-button{
     position: absolute;
     display: block;
-    bottom: 10%;
-    left: 14%;
+    bottom: 7%;
+    left: 3%;
     color: #f7f7f7;
     font-size: 2em;
     cursor: pointer;
@@ -170,4 +434,166 @@ button{
 
 .go-back-button:hover{
     color: #c6bf31;
+    transform: rotate(-30deg)
+}
+
+
+
+
+@media (min-width: 900px) {
+
+    .product-in-focus-img-and-description{
+        position: relative;
+        height: 85%;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        bottom: 0;
+        font-family: 'Montaga', serif;
+    }
+
+    .project-in-focus-img{
+        position: relative;
+        max-width: 50%;
+        max-height: 50%;
+        left: 4%;
+        box-shadow: -20px -10px 20px 0px #232621;
+        margin-top: 10%;
+        filter: brightness (170%);
+
+    }
+
+
+
+    .project-in-focus-description-and-techs{
+        position: relative;
+        top:0;
+        height: 65%;
+        width: 38%;
+        overflow: hidden;
+        font-size: 0.5em;
+        margin: auto;
+        /*background-color: rgba(46, 48, 46,0.99);*/
+        padding: 4%;
+        margin-top: 0.3%;
+
+
+    }
+}
+
+@media (max-width: 899px) {
+
+    .product-in-focus-img-and-description{
+        position: relative;
+        height: 85%;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        font-family: 'Montaga', serif;
+    }
+
+    .project-in-focus-title{
+        margin-top:-10%;
+        font-size: 1em;
+    }
+
+    .project-in-focus-img{
+        position: relative;
+        max-width: 100%;
+        max-height: 60%;
+        box-shadow: -20px -10px 20px 0px #232621;
+        margin-top: 6%;
+        filter: brightness (170%);
+    }
+
+    .project-in-focus-description-and-techs{
+        position: relative;
+        top:0;
+        height: 75%;
+        width: 90%;
+        overflow: hidden;
+        font-size: 0.5em;
+        margin: auto;
+        /*background-color: rgba(46, 48, 46,0.99);*/
+        padding: 4%;
+        margin-top: 0.3%;
+
+
+    }
+
+    .product-in-focus-techs{
+
+        font-size: 1em;
+        background-color: rgba(0,0,0,0);
+        margin-top: 4%;
+        margin-left: 12.5%;
+
+
+    }
+
+    .product-in-focus-techs ul{
+
+        font-size: 1em;
+        background-color: rgba(0,0,0,0);
+
+
+    }
+
+    .see-it-live{
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: 700;
+        position: relative;
+        right: 10%;
+        font-size: 3em;
+        top: 20%;
+        height: 30%;
+        width: 45;
+        color: #f7f7f7;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+
+    }
+
+    .go-back-button{
+
+        bottom: 2%;
+        left: 3%;
+        font-size: 1em;
+
+    }
+}
+
+
+.yellow-text{
+    color: #efdd51;
+
+}
+
+.cutive-mono{
+
+    font-family: 'Cutive Mono', monospace;
+}
+
+.athiti{
+
+    font-family: 'Athiti', sans-serif;
+}
+
+.droid-mono{
+    font-family: 'Droid Sans Mono', monospace;
+}
+
+.lightgrey-text{
+    color: #f7f7f7;
+}
+
+.just-another-hand{
+
+    font-family: 'Just Another Hand', cursive;
 }

@@ -2,42 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Niklas Nauber Portfolio</title>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Droid+Sans+Mono|Space+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Athiti|Slabo+27px" rel="stylesheet">
     <link rel="stylesheet" href="./vuePortfolio.css">
 </head>
 <body>
 
     <div id="mainElement" class="main-div">
-        <div class="intro-div">
+        <div class="intro-div just-another-hand" id="introDiv">
+            N i k l a s &nbspN a u b e r
 
-            <div id="letters">
-                <div class="c">c</div>
-                <div class="h">h</div>
-                <div class="o">o</div>
-                <div class="r">r</div>
-                <div class="e">e</div>
-                <div class="o">o</div>
-                <div class="g">g</div>
-                <div class="r">r</div>
-                <div class="a">a</div>
-                <div class="p">p</div>
-                <div class="h">h</div>
-                <div class="e">e</div>
-                <div class="r">r</div>
-                <div class="dash">-</div>
-                <div class="j">j</div>
-                <div class="s">s</div>
-                <br />
-            </div>
+        <!--
+
+         <video class='intro-video' preload='auto' loop="loop" muted="muted" autoplay>
+
+                <source src="./media/video/4K_magical.mp4" type="video/mp4">
+            </video>-->
 
         </div>
 
-        <div id='ulContainer' class="ul-container">
+
 
                 <ul class="projects-ul">
 
@@ -45,39 +37,68 @@
 
                         <div v-if="projectInFocus!=={}" class="project-in-focus-content">
 
-                            <h1>
-                                {{projectInFocus.name}}
-                            </h1>
+                            <div class="project-in-focus-title droid-mono">
+                                {{projectInFocus.name}} <span class="lightgrey-text">.</span>
+                            </div>
 
-                            <img class="project-in-focus-img" :src="projectInFocus.imgSrc" alt="">
+                            <div class="product-in-focus-img-and-description">
 
-                            <div class="product-in-focus-description"></div>
+                                <img class="project-in-focus-img" :src="projectInFocus.imgSrc" alt="">
+
+                                <div class="project-in-focus-description-and-techs cutive-mono">
+
+                                    <div class="project-in-focus-description">{{projectInFocus.description}}</div>
+                                    <div class="product-in-focus-techs-and-button">
+                                    <div class="product-in-focus-techs">
+                                        <span class="yellow-text cutive-mono">techniques. </span><br>
+                                        <ul>
+
+
+                                            <li v-for="tech in projectInFocus.techs">
+
+                                                {{tech}}
+
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="see-it-live athiti"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="yellow-text">see it live.</span></div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
 
 
 
 
-                            <button class="go-back-button" @click="unFocus()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+
+
+                            <button class="go-back-button" @click="unFocus()"><i class="fa fa-undo" aria-hidden="true"></i></button>
 
                         </div>
 
                     </div>
 
-                    <li class='project-li' v-for="project in projects">
+                    <li class='project-li cutive-mono' v-for="project in projects">
 
                         <img class='project-img' :src="project.imgSrc" :alt="project.imgSrc">
 
-                        <div class="projectInfo">
-                            {{project.name}} <br>
-                            {{project.description}}
+                        <div class="project-info">
+                            {{project.name}}
+
                         </div>
 
-                        <button class='go-to-button' :id="project.id" @click="(event) => {focusOnProject (event) }">Go To Project</button>
+                        <div class='go-to-button'><i class="fa fa-chevron-right" aria-hidden="true"></i><div :id="project.id" @click="(event) => {focusOnProject (event) }" class="cover-div"></div></div>
 
 
                     </li>
 
                 </ul>
-        </div>
+
     </div>
 
 </body>
@@ -90,39 +111,45 @@
             projectInFocus: {},
             projects: [
                 {
-                    imgSrc: 'media/niklasnauber.jpg',
+                    imgSrc: 'media/Namnlös.png',
                     name: "Niklas Nauber",
-                    description: "some description",
+                    description: "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                    techs: ["vue.js", "html", "css","vue.js", "html", "css"],
                     id: 0
                 },
                 {
                     imgSrc: "media/spectralogo small.png",
                     name: "some Name",
                     description: "some description",
+                    techs: ["vue.js", "html", "css","vue.js", "html", "css"],
                     id: 1
                 },
                 {
-                    imgSrc: 'media/niklasnauber.jpg',
+                    imgSrc: 'media/Namnlös.png',
                     name: "Niklas Nauber",
                     description: "some description",
+                    techs: ["vue.js", "html", "css","vue.js", "html", "css"],
                     id: 0
                 },
                 {
                     imgSrc: "media/spectralogo small.png",
                     name: "some Name",
                     description: "some description",
+                    techs: ["vue.js", "html", "css"],
                     id: 1
                 },
                 {
-                    imgSrc: 'media/niklasnauber.jpg',
+                    imgSrc: 'media/namnlös.png',
                     name: "Niklas Nauber",
                     description: "some description",
+                    techs: ["vue.js", "html", "css"],
                     id: 0
                 },
                 {
                     imgSrc: "media/spectralogo small.png",
                     name: "some Name",
                     description: "some description",
+                    techs: ["vue.js", "html", "css"],
                     id: 1
                 }
             ]
@@ -139,6 +166,22 @@
             }
         },
         methods: {
+            introDivHeight: function (event) {
+
+                window.onscroll = function() {
+                    var height = document.getElementById('introDiv').clientHeight;
+                    if (height >= 10) {
+                        height = height - document.body.scrollTop;
+                        console.log(height + ' = height')
+
+                    }
+
+                    console.log(document.body.height + ' = introDivheight')
+                    return height + px;
+
+                }
+
+            },
             focusOnProject: function (event) {
                 console.log('focusing on: ' + this.projects[event.target.id].name)
                 this.projectInFocus = this.projects[event.target.id];
@@ -151,113 +194,13 @@
         }
     })
 
-import * from './node_modules/choreographer-js';
 
-    var wrapperNode = document.getElementById('mainElement')
-    var scrollDownNode = document.querySelector('.scroll-down')
-    var linkNodes = document.querySelector('.ul-container')
-
-    var vh = window.innerHeight
-
-    /* STORE SOME KEY LOCATIONS */
-
-    /* ~ le fin ~
-     * The point where you cannot scroll down any further.
-     */
-    var fin = wrapperNode.clientHeight - vh + linkNodes.clientHeight
-
-    function calculateAnimations() {
-        return [
-            /* animate Cs */
-            { range: [-1, fin * 0.5],   selector: '.c', type: 'scale', style: 'transform:translateY', from: 0, to: 25, unit: 'px' },
-            { range: [fin * 0.5, fin],  selector: '.c', type: 'scale', style: 'transform:translateY', from: 25, to: 0, unit: 'px' },
-            { range: [fin * 0.4, fin],  selector: '.c', type: 'change', style: 'color', to: '#ffb515' },
-
-            /* animate Hs */
-            { range: [-1, fin * 0.5],   selector: '.h', type: 'scale', style: 'transform:scaleX', from: 1, to: 0.5 },
-            { range: [-1, fin * 0.5],   selector: '.h', type: 'scale', style: 'transform:scaleY', from: 1, to: 0.5 },
-            { range: [fin * 0.5, fin],  selector: '.h', type: 'scale', style: 'transform:scaleX', from: 0.5, to: 1 },
-            { range: [fin * 0.5, fin],  selector: '.h', type: 'scale', style: 'transform:scaleY', from: 0.5, to: 1 },
-            { range: [fin * 0.3, fin],  selector: '.h', type: 'change', style: 'color', to: '#1fd1ec' },
-
-            /* animate Os */
-            { range: [fin * 0.1, fin],  selector: '.o', type: 'randomizeColor' },
-
-            /* animate Rs */
-            { range: [-1, fin * 0.5],   selector: '.r', type: 'scale', style: 'transform:rotateX', from: 0, to: 90, unit: 'deg' },
-            { range: [fin * 0.5, fin],  selector: '.r', type: 'scale', style: 'transform:rotateX', from: 90, to: 0, unit: 'deg' },
-            { range: [fin * 0.3, fin],  selector: '.r', type: 'change', style: 'color', to: '#8382f9' },
-
-            /* animate Es */
-            { range: [fin * 0.3, fin],  selector: '.e', type: 'change', style: 'color', to: '#ff1b9b' },
-
-            /* animate Gs */
-            { range: [-1, fin * 0.5],   selectors: ['.g', '.j'], type: 'scale', style: 'transform:rotateZ', from: 0, to: 180, unit: 'deg' },
-            { range: [fin * 0.5, fin],  selectors: ['.g', '.j'], type: 'scale', style: 'transform:rotateZ', from: 180, to: 360, unit: 'deg' },
-            { range: [fin * 0.4, fin],  selectors: ['.g', '.j'], type: 'change', style: 'color', to: '#ff8b1c' },
-
-            /* animate As */
-            { range: [-1, fin * 0.5],   selectors: ['.a', '.s'], type: 'scale', style: 'transform:rotateZ', from: 0, to: -180, unit: 'deg' },
-            { range: [fin * 0.5, fin],  selectors: ['.a', '.s'], type: 'scale', style: 'transform:rotateZ', from: -180, to: -360, unit: 'deg' },
-            { range: [fin * 0.4, fin],  selectors: ['.a', '.s'], type: 'change', style: 'color', to: '#c05bdb' },
-
-            /* animate Ps */
-            { range: [-1, fin * 0.5],   selectors: ['.p', '.dash'], type: 'scale', style: 'opacity', from: 1, to: 0.1 },
-            { range: [fin * 0.5, fin],  selectors: ['.p', '.dash'], type: 'scale', style: 'opacity', from: 0.1, to: 1 },
-            { range: [fin * 0.4, fin],  selectors: ['.p', '.dash'], type: 'change', style: 'color', to: '#ff537c' },
-
-            /* animate line */
-            /*{ range: [-1, fin],         selector: '.line', type: 'scale', style: 'width', from: 0.01, to: 50, unit: '%' },
-            { range: [-1, fin],         selector: '.line', type: 'scale', style: 'opacity', from: 0, to: 1 },*/
-
-            /* animate arrow */
-            /*{ range: [0.6 * fin, fin], selector: '.scroll-down', type: 'scale', style: 'opacity', from: 1, to: 0 },
-            { range: [fin - 30, fin],   selector: '.scroll-down', type: 'change', style: 'display', to: 'none' },*/
-
-            /* animate links */
-            { range: [0.8 * fin, fin], selector: '.ul-container', type: 'scale', style: 'opacity', from: 0, to: 1 }
-        ]
-    }
-
-    // Instantiate choreographer.
-    var choreographer = new Choreographer({
-        animations: calculateAnimations(),
-        customFunctions: {
-            randomizeColor: function(data) {
-                var chars = '0123456789abcdef'.split('')
-                var hex = '#'
-
-                while (hex.length < 7) {
-                    hex += chars[Math.round(Math.random() * (chars.length - 1))]
-                }
-
-                data.node.style.color = hex
-            }
-        }
-    })
-
-    function animate() {
-        var scrollPosition = (wrapperNode.getBoundingClientRect().top - wrapperNode.offsetTop) * -1
-        choreographer.runAnimationsAt(scrollPosition)
-    }
-
-    document.body.addEventListener('scroll', animate)
-
-    animate()
-
-    window.addEventListener('resize', function() {
-        choreographer.updateAnimations(calculateAnimations())
-    })
 </script>
-<script type="application/x-javascript">
-    function draw(w, h) {
-        var ctx = document.getCSSCanvasContext("2d", "squares", w, h);
 
-        ctx.fillStyle = "rgb(200,0,0)";
-        ctx.fillRect (10, 10, 55, 50);
+    <script src="choreographer.js"></script>
 
-        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-        ctx.fillRect (30, 30, 55, 50);
-    }
-</script>
+        <script src="./node_modules/choreographer-js/dist/choreographer.min.js"></script>
+        <script type="javascript">
+
+    </script>
 </html>
