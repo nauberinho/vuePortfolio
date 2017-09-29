@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "choreographer-js": "^1.1.0"
+    "animate.css": "^3.5.2",
+    "chart.js": "^2.7.0",
+    "choreographer-js": "^1.1.0",
+    "jquery": "^3.2.1",
+    "vue-chartjs": "^2.8.7"
   },
   "name": "vueportfolio",
   "version": "1.0.0",
